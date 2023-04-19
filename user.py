@@ -3,4 +3,4 @@ from gekko_adapter import GekkoAdapter
 import json
 
 g = Gekko
-json_df = g.get_categories()
+print(g.get_exchange_rate())
