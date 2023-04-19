@@ -4,4 +4,3 @@ import json
 
 g = Gekko
 json_df = g.get_categories()
-GekkoAdapter.json_to_csv(json_df, "categories.csv")
