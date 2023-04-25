@@ -16,16 +16,19 @@ textbox = tk.Text(root, font=('Arial', 16))
 textbox.pack(padx=10, pady=10)
 
 selected_coin = tk.StringVar()
-options = ["Option 1", "Option 2", "Option 3"]
+selected_graph = tk.StringVar()
+
+options_0 = ["Option 1", "Option 2", "Option 3"]
+options_1 = ["Option 4", "Option 5", "Option 6"]
 
 label = ttk.Label(root, text="Please select a coin:", font=('Arial', 16))
-combo_button = ttk.Combobox(root, values=options, textvariable=selected_coin)
+combo_button = ttk.Combobox(root, values=options_0, textvariable=selected_coin)
 
 label.pack(fill=tk.X, padx=10, pady=10)
 combo_button.pack(padx=10, pady=10)
 
 label = ttk.Label(root, text="Please select a graph:", font=('Arial', 16))
-combo_button = ttk.Combobox(root, values=options, textvariable=selected_coin)
+combo_button = ttk.Combobox(root, values=options_1, textvariable=selected_graph)
 
 label.pack(fill=tk.X, padx=10, pady=10)
 combo_button.pack(padx=10, pady=10)
