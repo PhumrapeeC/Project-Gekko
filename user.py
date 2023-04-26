@@ -5,32 +5,39 @@ from gekko_adapter import GekkoAdapter
 import json
 
 
-root = tk.Tk()
-root.geometry("500x500")
-root.title("GEKKO")
+class GekkoApp:
+    def __init__(self, master):
+        self.master = master
+        self.master.geometry("800x800")
+        self.master.title("GEKKO")
+        self.master.resizable(False, False)
 
-title_lable = tk.Label(root, text="PROJECT GEKKO", font=("Arial", 18))
-title_lable.pack(padx=20, pady=20)
+        self.title_label = tk.Label(self.master, text="PROJECT GEKKO", font=("Arial", 18))
+        self.title_label.pack(padx=20, pady=20)
 
-textbox = tk.Text(root, font=('Arial', 16))
-textbox.pack(padx=10, pady=10)
+        self.canvas = tk.Canvas(self.master, bg='white', width=700, height=450)
+        self.canvas.pack(padx=10, pady=10)
 
-selected_coin = tk.StringVar()
-selected_graph = tk.StringVar()
+        self.selected_coin = tk.StringVar()
+        self.selected_graph = tk.StringVar()
 
-options_0 = ["Option 1", "Option 2", "Option 3"]
-options_1 = ["Option 4", "Option 5", "Option 6"]
+        options_0 = ["Option 1", "Option 2", "Option 3"]
+        options_1 = ["Option 4", "Option 5", "Option 6"]
 
-label = ttk.Label(root, text="Please select a coin:", font=('Arial', 16))
-combo_button = ttk.Combobox(root, values=options_0, textvariable=selected_coin)
+        self.coin_label = ttk.Label(self.master, text="Please select a coin:", font=('Arial', 16))
+        self.coin_combo = ttk.Combobox(self.master, values=options_0, textvariable=self.selected_coin)
 
-label.pack(fill=tk.X, padx=10, pady=10)
-combo_button.pack(padx=10, pady=10)
+        self.coin_label.pack(fill=tk.X, padx=10, pady=10)
+        self.coin_combo.pack(padx=10, pady=10)
 
-label = ttk.Label(root, text="Please select a graph:", font=('Arial', 16))
-combo_button = ttk.Combobox(root, values=options_1, textvariable=selected_graph)
+        self.graph_label = ttk.Label(self.master, text="Please select a graph:", font=('Arial', 16))
+        self.graph_combo = ttk.Combobox(self.master, values=options_1, textvariable=self.selected_graph)
 
-label.pack(fill=tk.X, padx=10, pady=10)
-combo_button.pack(padx=10, pady=10)
+        self.graph_label.pack(fill=tk.X, padx=10, pady=10)
+        self.graph_combo.pack(padx=10, pady=10)
 
-root.mainloop()
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = GekkoApp(root)
+    root.mainloop()
