@@ -1,7 +1,5 @@
 # Project-Gekko
 
-Gekko is a Crypto monitoring app with its candlestick graph feature, users can track the price movements of various cryptocurrencies over time and identify trends that could impact the investments.
+Gekko crypto monitorring app is a Python program that creates a simple GUI that allows the user to select a cryptocurrency and plot its historical price data in various graph types such as line plot, histogram, and box plot. The program uses the tkinter library for creating the GUI and the requests, seaborn, pandas, and matplotlib libraries for retrieving, cleaning, and plotting data.
 
-In addition to the candlestick graph, the app also allows users to view detailed information about specific cryptocurrencies, including their market capitalization, trading volume, and recent news and developments.
-
-Users can even save their favorite coins for quick access and monitoring, ensuring that they never miss out on important price movements or developments in the world of cryptocurrency.
+The program retrieves a list of cryptocurrency names from the CoinGecko API and populates a list box in the GUI with these names. When the user selects a cryptocurrency and a graph type, the program retrieves the historical price data for the selected cryptocurrency using the CoinGecko API and plots the data in the selected graph type.
