@@ -69,7 +69,6 @@ class MainApplication(tk.Frame):
         super().__init__(master)
         self.master = master
         self.graph = Graph()
-        self.master.resizable(False, False)
         self.pack()
         self.create_widgets()
         self.create_graph()
